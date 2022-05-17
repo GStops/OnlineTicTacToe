@@ -2,15 +2,17 @@
     box-sizing: border-box;
 }
 
+
 #app {
-    border:1px solid black;
+    border:3px solid black;
+    border-style: solid;
     width: 500px;
     height: 500px;
     font-weight: bold;
     font-family: sans-serif;
     display: flex;
     flex-direction: column;
-
+    
 }
 
 .header {
@@ -34,7 +36,7 @@
     text-align: center;
 }
 
-.header__restart {
+.header__restart, .header__restore {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -71,4 +73,15 @@
 
 .board__tile--winner{
     color: green;
+}
+
+.jest{
+    border-radius: 25px;
+    align-self: center;
+    justify-content: center;
+
+}
+.jest__button{
+    color: red;
+    
 }

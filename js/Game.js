@@ -2,6 +2,7 @@ export default class Game {
     constructor() {
         this.turn = "X";
         this.board = new Array(9).fill(null);
+        this.prevIndex = null;
 
     }
     nextTurn() {
@@ -9,13 +10,16 @@ export default class Game {
 
     }
     makeMove(i) {
-        if (!this.isInProgress()) {
-            return;
-        }
         if (this.board[i]) {
             return;
         }
+        
+        if (!this.isInProgress()) {
+            return;
+        }
+        
         this.board[i] = this.turn;
+        this.prevIndex = i;
         if (!this.findWinningCombo()) {
             this.nextTurn();
         }

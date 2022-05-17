@@ -12,5 +12,16 @@ gameView.onTileClick = function(i){
 gameView.onRestartClick = function(){
     game = new Game();
     gameView.update(game);
+};
+gameView.onWinButtonClick = function(){
+    gameView.updateMessage(game);
 }
+gameView.onRestoreClick = function (){
+    if(game.isInProgress() && !(game.board[game.prevIndex] === null)){
+    game.board[game.prevIndex] = null;
+    game.nextTurn();
+    gameView.update(game);
+}
+}
+
 gameView.update(game);
